@@ -41,6 +41,9 @@ const App = () => {
   return (
     <Router>
       <AppContent />
+      <footer className="flex h-[4rem] w-full items-center justify-center bg-transparent font-semibold">
+        © 2024 OMMU ONE NIGHT STAND WITH AI. All rights reserved.
+      </footer>
     </Router>
   );
 };
