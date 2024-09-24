@@ -1,17 +1,15 @@
 import {
+  Route,
   BrowserRouter as Router,
   Routes,
-  Route,
-  Link,
   useLocation,
 } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import EventsPage from './pages/events-page';
 import CreateEventPage from './pages/create-event-page';
-import RewardsPage from './pages/rewards-page';
-import LandingPage from './pages/LandingPage';
+import EventsPage from './pages/events-page';
 import Header from './pages/Header';
+import LandingPage from './pages/LandingPage';
 import LoginForm from './pages/LoginForm';
+import RewardsPage from './pages/rewards-page';
 
 const AppContent = () => {
   const path = useLocation().pathname;
