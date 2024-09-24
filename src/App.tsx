@@ -14,6 +14,9 @@ import RewardsPage from './pages/rewards-page';
 const AppContent = () => {
   const path = useLocation().pathname;
 
+
+  // test push
+
   return (
     <div className="min-h-screen bg-gray-100">
       {path !== '/' && path !== '/login' && <Header />}
