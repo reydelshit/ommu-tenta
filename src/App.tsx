@@ -11,6 +11,8 @@ import LandingPage from './pages/LandingPage';
 import LoginForm from './pages/LoginForm';
 import RewardsPage from './pages/rewards-page';
 import MainDashboard from './pages/MainDashboard';
+import PortfolioPage from './pages/Portfolio';
+import SettingsPage from './pages/Settings';
 
 const AppContent = () => {
   const path = useLocation().pathname;
@@ -27,8 +29,8 @@ const AppContent = () => {
           <Route path="/authenticated/events" element={<EventsPage />} />
           <Route path="/authenticated/create" element={<CreateEventPage />} />
           <Route path="/authenticated/rewards" element={<RewardsPage />} />
-          <Route path="/authenticated/s" element={<MainDashboard />} />
-          <Route path="/authenticated/d" element={<RewardsPage />} />
+          <Route path="/authenticated/portfolio" element={<PortfolioPage />} />
+          <Route path="/authenticated/settings" element={<SettingsPage />} />
         </Routes>
       </main>
     </div>

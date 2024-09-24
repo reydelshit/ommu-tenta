@@ -1,17 +1,26 @@
 import Logo from '@/assets/logo.png';
 import Profile from '@/assets/prof.jpg';
-import { Link } from 'react-router-dom';
-
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { BellDotIcon } from 'lucide-react';
-
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover';
+import {
+  BellDotIcon,
+  Calendar,
+  DollarSign,
+  LogOut,
+  Settings,
+  User,
+} from 'lucide-react';
+import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <>
@@ -26,7 +35,7 @@ const Header = () => {
 
           <span className="text-sm text-gray-500">3:46 AM GMT+8</span>
           <Link
-            to="/authenticated"
+            to="/authenticated/events"
             className="text-sm text-gray-600 hover:text-gray-800"
           >
             Explore
@@ -45,8 +54,58 @@ const Header = () => {
           >
             Create Event
           </Link>
-          <BellDotIcon className="h-6 w-6 cursor-pointer text-gray-600" />
 
+          <Popover>
+            <PopoverTrigger>
+              {' '}
+              <BellDotIcon className="h-6 w-6 cursor-pointer text-gray-600" />
+            </PopoverTrigger>
+            <PopoverContent>Empty notification</PopoverContent>
+          </Popover>
+
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              <Avatar>
+                <AvatarImage src={Profile} alt="User" />
+                <AvatarFallback>U</AvatarFallback>
+              </Avatar>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem asChild>
+                <Link to="/authenticated/portfolio">
+                  <User className="mr-2 h-4 w-4" />
+                  <span>Portfolio</span>
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link to="/authenticated/settings">
+                  <Settings className="mr-2 h-4 w-4" />
+                  <span>Settings</span>
+                </Link>
+              </DropdownMenuItem>
+
+              <DropdownMenuItem asChild>
+                <Link to="/authenticated/events">
+                  <Calendar className="mr-2 h-4 w-4" />
+                  <span>Events</span>
+                </Link>
+              </DropdownMenuItem>
+
+              <DropdownMenuItem asChild>
+                <Link to="/authenticated/rewards">
+                  <DollarSign className="mr-2 h-4 w-4" />
+                  <span>Rewards</span>
+                </Link>
+              </DropdownMenuItem>
+
+              <DropdownMenuItem>
+                <LogOut className="mr-2 h-4 w-4" />
+                <span>Sign out</span>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          {/*               
           <DropdownMenu>
             <DropdownMenuTrigger>
               {' '}
@@ -96,7 +155,7 @@ const Header = () => {
                 </Link>
               </DropdownMenuItem>
             </DropdownMenuContent>
-          </DropdownMenu>
+          </DropdownMenu> */}
         </div>
       </header>
     </>
