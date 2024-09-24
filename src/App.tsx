@@ -14,6 +14,7 @@ import RewardsPage from './pages/rewards-page';
 const AppContent = () => {
   const path = useLocation().pathname;
 
+
   return (
     <div className="min-h-screen bg-gray-100">
       {path !== '/' && path !== '/login' && <Header />}
