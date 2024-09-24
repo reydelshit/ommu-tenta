@@ -18,7 +18,7 @@ const AppContent = () => {
     <div className="min-h-screen bg-gray-100">
       {path !== '/' && path !== '/login' && <Header />}
 
-      <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginForm />} />

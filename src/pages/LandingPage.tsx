@@ -1,12 +1,12 @@
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-
+import Logo from '@/assets/logo.png';
 export default function LandingPage() {
   return (
     <div className="flex min-h-[90vh] flex-col bg-gray-100">
       <header className="flex items-center justify-between p-4">
         <div className="flex items-center space-x-4">
-          <img src="/placeholder.svg" alt="Ommu logo" className="h-8 w-8" />
+          <img src={Logo} alt="Ommu logo" className="w-28" />
           <span className="text-sm text-gray-500">3:46 AM GMT+8</span>
         </div>
         <div className="flex items-center space-x-4">
