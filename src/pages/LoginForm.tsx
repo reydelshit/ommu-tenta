@@ -73,7 +73,7 @@ export default function LoginForm() {
                   Use {loginMethod === 'email' ? 'Phone Number' : 'Email'}
                 </Button>
                 <Button type="submit" className="w-full">
-                  <Link to="/authenticated/events">
+                  <Link to="/authenticated">
                     Continue with {loginMethod === 'email' ? 'Email' : 'Phone'}
                   </Link>
                 </Button>
@@ -105,7 +105,7 @@ export default function LoginForm() {
                   </svg>
 
                   <Link
-                    to="/authenticated/events"
+                    to="/authenticated"
                     className="text-sm text-gray-600 hover:text-gray-800"
                   >
                     Sign in with Google
