@@ -12,7 +12,7 @@ export default function LoginForm() {
 
   return (
     <div className="flex min-h-[90vh] flex-col bg-gray-100">
-      <header className="flex justify-between border-2 p-4">
+      <header className="flex justify-between p-4">
         <div className="flex items-center space-x-4">
           <img src={Logo} alt="Ommu logo" className="w-28" />
 

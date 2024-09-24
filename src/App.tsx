@@ -10,10 +10,10 @@ import Header from './pages/Header';
 import LandingPage from './pages/LandingPage';
 import LoginForm from './pages/LoginForm';
 import RewardsPage from './pages/rewards-page';
+import MainDashboard from './pages/MainDashboard';
 
 const AppContent = () => {
   const path = useLocation().pathname;
-
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -23,9 +23,12 @@ const AppContent = () => {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginForm />} />
+          <Route path="/authenticated/" element={<MainDashboard />} />
           <Route path="/authenticated/events" element={<EventsPage />} />
           <Route path="/authenticated/create" element={<CreateEventPage />} />
           <Route path="/authenticated/rewards" element={<RewardsPage />} />
+          <Route path="/authenticated/s" element={<MainDashboard />} />
+          <Route path="/authenticated/d" element={<RewardsPage />} />
         </Routes>
       </main>
     </div>
