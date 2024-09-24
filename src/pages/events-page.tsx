@@ -17,7 +17,7 @@ export default function EventsPage() {
         <div className="relative">
           <Input
             type="search"
-            placeholder="Search events..."
+            placeholder="Search fucking events...."
             className="w-64 bg-white py-2 pl-10 pr-4"
           />
           <SearchIcon className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 transform text-gray-400" />
@@ -30,7 +30,7 @@ export default function EventsPage() {
           {
             title: 'Tech Meetup 2024',
             date: 'March 15, 2024',
-            location: 'San Francisco, CA',
+            location: 'San Francisco, CA', 
             status: 'Upcoming',
             attendees: '50 / 100',
           },
