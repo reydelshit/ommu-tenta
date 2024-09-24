@@ -70,7 +70,7 @@ const Header = () => {
                 <AvatarFallback>U</AvatarFallback>
               </Avatar>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
+            <DropdownMenuContent className="w-[10rem]" align="end">
               <DropdownMenuItem asChild>
                 <Link to="/authenticated/portfolio">
                   <User className="mr-2 h-4 w-4" />
@@ -99,7 +99,7 @@ const Header = () => {
               </DropdownMenuItem>
 
               <DropdownMenuItem>
-                <Link to="/">
+                <Link className="flex w-full items-center" to="/">
                   <LogOut className="mr-2 h-4 w-4" />
                   <span>Sign out</span>
                 </Link>

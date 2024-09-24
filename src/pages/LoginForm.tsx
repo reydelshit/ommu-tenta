@@ -15,19 +15,9 @@ export default function LoginForm() {
       <header className="flex justify-between p-4">
         <div className="flex items-center space-x-4">
           <img src={Logo} alt="Ommu logo" className="w-28" />
-
-          <span className="text-sm text-gray-500">3:46 AM GMT+8</span>
         </div>
         <div className="flex items-center space-x-4">
-          <a href="#" className="text-sm text-gray-600 hover:text-gray-800">
-            Explore
-          </a>
-          <Link
-            to="/login"
-            className="text-sm text-gray-600 hover:text-gray-800"
-          >
-            Sign in
-          </Link>
+          <span className="text-lg text-gray-500">3:46 AM GMT+8</span>
         </div>
       </header>
 
