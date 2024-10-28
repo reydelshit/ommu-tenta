@@ -17,7 +17,6 @@ import {
   Coffee,
   Droplet,
   Leaf,
-  MessageSquare,
   TrendingUpIcon,
   Wheat,
   Zap,

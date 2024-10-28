@@ -18,14 +18,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import {
-  Calendar,
-  DollarSign,
-  Eye,
-  LogOut,
-  Settings,
-  User,
-} from 'lucide-react';
+import { Calendar, DollarSign, LogOut, Settings, User } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import CreateEventPage from './create-event-page';
 const Header = () => {

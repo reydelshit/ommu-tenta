@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
@@ -7,8 +7,8 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Button } from '@/components/ui/button';
-import { MapPin, Users, Coffee, Leaf, BookOpen } from 'lucide-react';
+import { BookOpen, Coffee, Leaf, MapPin, Users } from 'lucide-react';
+import { useState } from 'react';
 
 const locations = [
   {

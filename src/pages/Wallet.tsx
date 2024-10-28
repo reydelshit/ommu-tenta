@@ -1,8 +1,5 @@
-import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import {
   Dialog,
   DialogContent,
@@ -11,6 +8,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
+import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import {
   Select,
@@ -27,7 +25,9 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
-import { Wallet, ArrowUpRight, ArrowDownLeft, RefreshCw } from 'lucide-react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { ArrowDownLeft, ArrowUpRight, RefreshCw } from 'lucide-react';
+import { useState } from 'react';
 
 export default function WalletPage() {
   const [balance, setBalance] = useState(1000);
