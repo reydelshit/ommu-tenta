@@ -14,6 +14,7 @@ import MainDashboard from './pages/MainDashboard';
 import PortfolioPage from './pages/Portfolio';
 import SettingsPage from './pages/Settings';
 import WalletPage from './pages/Wallet';
+import Explore from './pages/Explore';
 
 const AppContent = () => {
   const path = useLocation().pathname;
@@ -33,6 +34,7 @@ const AppContent = () => {
           <Route path="/authenticated/portfolio" element={<PortfolioPage />} />
           <Route path="/authenticated/settings" element={<SettingsPage />} />
           <Route path="/authenticated/wallet" element={<WalletPage />} />
+          <Route path="/authenticated/explore" element={<Explore />} />
         </Routes>
       </main>
     </div>

@@ -24,7 +24,7 @@ export default function PortfolioPage() {
           <div className="grid grid-cols-2 gap-4">
             <div>
               <p className="font-semibold">Name:</p>
-              <p>Goj Agayan</p>
+              <p>Fretz Gabor</p>
             </div>
             <div>
               <p className="font-semibold">CIV Level:</p>

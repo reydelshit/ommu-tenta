@@ -31,7 +31,7 @@ export default function LandingPage() {
         <div className="flex w-full max-w-6xl items-center space-x-8">
           <div className="flex-1 space-y-4">
             <h2 className="text-xl text-gray-500">ommu</h2>
-            <h1 className="text-5xl font-bold">
+            <h1 className="text-8xl font-bold">
               Engage
               <br />
               <span className="text-blue-500">to Earn</span>
@@ -40,9 +40,11 @@ export default function LandingPage() {
               Explore your community, invite friends and join events. Find a
               memorable event today.
             </p>
-            <Button className="bg-gray-900 text-white hover:bg-gray-700">
-              CREATE YOUR FIRST EVENT
-            </Button>
+            <Link to="/login">
+              <Button className="my-4 h-[3rem] w-[8rem] bg-yellow-700">
+                Get Started
+              </Button>
+            </Link>
           </div>
           <div className="flex-1">
             <div className="flex aspect-video items-center justify-center rounded-lg bg-red-200">

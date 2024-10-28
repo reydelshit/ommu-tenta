@@ -8,7 +8,13 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { CalendarIcon, MapPinIcon, SearchIcon, UserIcon } from 'lucide-react';
+import {
+  CalendarIcon,
+  Gem,
+  MapPinIcon,
+  SearchIcon,
+  UserIcon,
+} from 'lucide-react';
 
 export default function EventsPage() {
   return (
@@ -33,6 +39,7 @@ export default function EventsPage() {
             location: 'Poblacion Polomolok ',
             status: 'Upcoming',
             attendees: '50 / 100',
+            rewards: '500 sugar',
           },
           {
             title: 'AI Workshop',
@@ -40,6 +47,7 @@ export default function EventsPage() {
             location: 'Online',
             status: 'In Progress',
             attendees: '75 / 150',
+            rewards: '500 sugar',
           },
           {
             title: 'Startup Pitch Night',
@@ -47,6 +55,7 @@ export default function EventsPage() {
             location: 'MSU GENSAN',
             status: 'Few Spots Left',
             attendees: '90 / 100',
+            rewards: '500 sugar',
           },
           {
             title: 'Web Dev Conference',
@@ -54,6 +63,7 @@ export default function EventsPage() {
             location: 'KCC GLAMANG',
             status: 'Registration Open',
             attendees: '200 / 500',
+            rewards: '500 sugar',
           },
           {
             title: 'Basketball mga bro',
@@ -61,6 +71,7 @@ export default function EventsPage() {
             location: 'TUPI GYM',
             status: 'Upcoming',
             attendees: '100 / 300',
+            rewards: '500 sugar',
           },
           {
             title: 'UX Design Workshop',
@@ -68,6 +79,7 @@ export default function EventsPage() {
             location: 'OMMU Street',
             status: 'Registration Open',
             attendees: '30 / 50',
+            rewards: '500 sugar',
           },
         ].map((event, index) => (
           <Card key={index}>
@@ -95,6 +107,11 @@ export default function EventsPage() {
               <div className="mb-4 flex items-center space-x-2 text-sm text-gray-500">
                 <MapPinIcon className="h-4 w-4" />
                 <span>{event.location}</span>
+              </div>
+
+              <div className="mb-4 flex items-center space-x-2 text-sm text-gray-500">
+                <Gem className="h-4 w-4" />
+                <span>{event.rewards}</span>
               </div>
             </CardContent>
             <CardFooter className="flex items-center justify-between">

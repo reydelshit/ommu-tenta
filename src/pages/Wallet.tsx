@@ -101,7 +101,7 @@ export default function WalletPage() {
           <CardContent>
             <div className="text-4xl font-bold">{balance.toFixed(2)} OMMU</div>
             <p className="mt-2 text-sm text-muted-foreground">
-              ≈ ${(balance * 0.1).toFixed(2)} USD
+              ≈ ₱{(balance * 0.1).toFixed(2)} PHP
             </p>
           </CardContent>
         </Card>

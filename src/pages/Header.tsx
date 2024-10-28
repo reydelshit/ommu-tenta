@@ -18,7 +18,14 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Calendar, DollarSign, LogOut, Settings, User } from 'lucide-react';
+import {
+  Calendar,
+  DollarSign,
+  Eye,
+  LogOut,
+  Settings,
+  User,
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
 import CreateEventPage from './create-event-page';
 const Header = () => {
@@ -36,6 +43,13 @@ const Header = () => {
           <span className="hidden text-sm text-gray-500 sm:block">
             3:46 AM GMT+8
           </span>
+
+          <Link
+            to="/authenticated/explore"
+            className="text-sm text-gray-600 hover:text-gray-800"
+          >
+            Explore
+          </Link>
         </div>
 
         <div className="flex gap-2">
@@ -54,7 +68,9 @@ const Header = () => {
             </Link>
 
             <Dialog>
-              <DialogTrigger>Create Event</DialogTrigger>
+              <DialogTrigger className="font-semibold">
+                Create Event
+              </DialogTrigger>
               <DialogContent>
                 <DialogHeader>
                   <DialogTitle className="hidden">Create Event</DialogTitle>
@@ -68,9 +84,13 @@ const Header = () => {
 
             <Link
               to="/authenticated/wallet"
-              className="text-sm font-semibold text-gray-600 hover:text-gray-800"
+              className="mx-[4rem] block rounded-md bg-green-500 p-2 text-sm font-semibold text-white"
             >
-              <Button>Wallet</Button>
+              <div className="flex w-full items-center justify-between gap-2">
+                <h1>₱1000</h1>
+
+                {/* <Eye className="mr-2 h-4 w-4" /> */}
+              </div>
             </Link>
           </div>
 
@@ -123,7 +143,7 @@ const Header = () => {
                 </Link>
               </DropdownMenuItem>
 
-              <DropdownMenuSeparator />
+              <DropdownMenuSeparator className="block md:hidden" />
 
               <DropdownMenuItem asChild>
                 <Link to="/authenticated/portfolio">

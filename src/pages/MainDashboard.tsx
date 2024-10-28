@@ -17,6 +17,7 @@ import {
   Coffee,
   Droplet,
   Leaf,
+  MessageSquare,
   TrendingUpIcon,
   Wheat,
   Zap,
@@ -32,10 +33,29 @@ export default function MainDashboard() {
   const [userPoints] = useState(1250);
   const [userLevel] = useState(5);
 
+  const [increasePointsCheckIn, setIncreasePointsCheckIn] = useState(10);
+  const [increasePointsForum, setIncreasePointsForum] = useState(0);
+  const [increasePointsProfile, setIncreasePointsProfile] = useState(80);
+
   const challenges = [
-    { id: 1, title: 'Post 5 comments', points: 50, progress: 60 },
-    { id: 2, title: 'Create a new topic', points: 100, progress: 0 },
-    { id: 3, title: 'Reach 1000 likes', points: 200, progress: 80 },
+    {
+      id: 1,
+      title: 'Daily Check-in',
+      points: 50 + increasePointsCheckIn,
+      progress: Math.min((increasePointsCheckIn / 200) * 100, 100),
+    },
+    {
+      id: 2,
+      title: 'Forum Participation',
+      points: 100 + increasePointsForum,
+      progress: Math.min((increasePointsForum / 200) * 100, 100),
+    },
+    {
+      id: 3,
+      title: 'Complete Your Profile',
+      points: 200 + increasePointsProfile,
+      progress: Math.min((increasePointsProfile / 500) * 100, 100),
+    },
   ];
 
   const leaderboard = [
@@ -43,18 +63,6 @@ export default function MainDashboard() {
     { id: 2, name: 'Mark M.', points: 4500, image: Jed4 },
     { id: 3, name: 'Agayan', points: 4000, image: Jeds },
   ];
-
-  // const rewards = [
-  //   { id: 1, title: 'Custom Avatar', points: 2000, earned: true },
-  //   { id: 2, title: '1 Month Premium', points: 5000, earned: false },
-  //   { id: 3, title: 'Exclusive Badge', points: 3000, earned: false },
-  // ];
-
-  // const recentActivities = [
-  //   { id: 1, user: 'Pretz', action: 'posted a new topic', image: Pretz },
-  //   { id: 2, user: 'Kathuro', action: 'completed a challenge', image: Kathuro },
-  //   { id: 3, user: 'Mark', action: 'earned a reward', image: Mark },
-  // ];
 
   return (
     <div className="min-h-screen bg-gray-100 p-8">
@@ -100,7 +108,11 @@ export default function MainDashboard() {
                       <span>{challenge.title}</span>
                       <span>{challenge.points} pts</span>
                     </div>
-                    <Progress value={challenge.progress} className="w-full" />
+                    <Progress
+                      value={challenge.progress}
+                      className="w-full"
+                      color="orange"
+                    />
                   </li>
                 ))}
               </ul>
@@ -184,13 +196,84 @@ export default function MainDashboard() {
         </div> */}
 
         {/* Activities, Quests, Tasks, and Patronage */}
-        <Tabs defaultValue="activities">
-          <TabsList className="grid w-full grid-cols-4">
-            <TabsTrigger value="activities">Activities</TabsTrigger>
-            <TabsTrigger value="quests">Quests</TabsTrigger>
-            <TabsTrigger value="tasks">Tasks</TabsTrigger>
-            <TabsTrigger value="patronage">Patronage</TabsTrigger>
+        <Tabs defaultValue="tasks">
+          <TabsList className="grid h-[3.5rem] w-full grid-cols-4">
+            <TabsTrigger className="h-full" value="tasks">
+              Tasks
+            </TabsTrigger>
+            <TabsTrigger className="h-full" value="quests">
+              Quests
+            </TabsTrigger>
+            <TabsTrigger className="h-full" value="activities">
+              Activities
+            </TabsTrigger>
+            <TabsTrigger className="h-full" value="patronage">
+              Patronage
+            </TabsTrigger>
           </TabsList>
+          <TabsContent value="tasks" className="mt-4">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {[
+                {
+                  title: 'Daily Check-in',
+                  description: 'Log in every day for bonus XP',
+                  xp: 50,
+                },
+                {
+                  title: 'Forum Participation',
+                  description: 'Post or reply in the community forum',
+                  xp: 100,
+                },
+                {
+                  title: 'Complete Your Profile',
+                  description: 'Fill out all sections of your user profile',
+                  xp: 200,
+                },
+              ].map((task, index) => (
+                <Card key={index}>
+                  <CardHeader>
+                    <CardTitle>{task.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-gray-600">{task.description}</p>
+                  </CardContent>
+                  <CardFooter className="flex items-center justify-between">
+                    <Badge>{task.xp} XP</Badge>
+                    <Button
+                      disabled={
+                        (task.title === 'Daily Check-in' &&
+                          increasePointsCheckIn >= 200) ||
+                        (task.title === 'Forum Participation' &&
+                          increasePointsForum >= 200) ||
+                        (task.title === 'Complete Your Profile' &&
+                          increasePointsProfile >= 500)
+                      }
+                      size="sm"
+                      onClick={() => {
+                        console.log('task.xp', task.xp);
+
+                        console.log(increasePointsCheckIn + task.xp);
+
+                        if (task.title === 'Daily Check-in') {
+                          setIncreasePointsCheckIn(
+                            increasePointsCheckIn + task.xp,
+                          );
+                        } else if (task.title === 'Forum Participation') {
+                          setIncreasePointsForum(increasePointsForum + task.xp);
+                        } else if (task.title === 'Complete Your Profile') {
+                          setIncreasePointsProfile(
+                            increasePointsProfile + task.xp,
+                          );
+                        }
+                      }}
+                    >
+                      Complete
+                    </Button>
+                  </CardFooter>
+                </Card>
+              ))}
+            </div>
+          </TabsContent>
           <TabsContent value="activities" className="mt-4">
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
               {[
@@ -310,40 +393,7 @@ export default function MainDashboard() {
               ))}
             </div>
           </TabsContent>
-          <TabsContent value="tasks" className="mt-4">
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {[
-                {
-                  title: 'Daily Check-in',
-                  description: 'Log in every day for bonus XP',
-                  xp: 50,
-                },
-                {
-                  title: 'Forum Participation',
-                  description: 'Post or reply in the community forum',
-                  xp: 100,
-                },
-                {
-                  title: 'Complete Your Profile',
-                  description: 'Fill out all sections of your user profile',
-                  xp: 200,
-                },
-              ].map((task, index) => (
-                <Card key={index}>
-                  <CardHeader>
-                    <CardTitle>{task.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-gray-600">{task.description}</p>
-                  </CardContent>
-                  <CardFooter className="flex items-center justify-between">
-                    <Badge>{task.xp} XP</Badge>
-                    <Button size="sm">Complete</Button>
-                  </CardFooter>
-                </Card>
-              ))}
-            </div>
-          </TabsContent>
+
           <TabsContent value="patronage" className="mt-4">
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
               {[
