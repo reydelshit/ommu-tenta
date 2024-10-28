@@ -74,7 +74,7 @@ export default function EventsPage() {
             <CardHeader>
               <CardTitle>{event.title}</CardTitle>
               <Badge
-                className={`${
+                className={`p-3 ${
                   event.status === 'Upcoming'
                     ? 'bg-green-500'
                     : event.status === 'In Progress'

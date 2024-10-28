@@ -13,6 +13,7 @@ import RewardsPage from './pages/rewards-page';
 import MainDashboard from './pages/MainDashboard';
 import PortfolioPage from './pages/Portfolio';
 import SettingsPage from './pages/Settings';
+import WalletPage from './pages/Wallet';
 
 const AppContent = () => {
   const path = useLocation().pathname;
@@ -31,6 +32,7 @@ const AppContent = () => {
           <Route path="/authenticated/rewards" element={<RewardsPage />} />
           <Route path="/authenticated/portfolio" element={<PortfolioPage />} />
           <Route path="/authenticated/settings" element={<SettingsPage />} />
+          <Route path="/authenticated/wallet" element={<WalletPage />} />
         </Routes>
       </main>
     </div>

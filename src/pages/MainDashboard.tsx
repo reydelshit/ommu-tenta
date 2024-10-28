@@ -67,8 +67,8 @@ export default function MainDashboard() {
           </Button> */}
         </header>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-          <Card className="col-span-2">
+        <div className="flex w-full flex-col gap-8 md:flex-row">
+          <Card className="h-[15rem w-full">
             <CardHeader>
               <CardTitle>Your Profile</CardTitle>
             </CardHeader>
@@ -78,7 +78,7 @@ export default function MainDashboard() {
                 <AvatarFallback>UN</AvatarFallback>
               </Avatar>
               <div className="flex-1 space-y-2">
-                <h2 className="text-2xl font-semibold">User Name</h2>
+                <h2 className="text-2xl font-semibold">Fretz Gabor</h2>
                 <div className="flex items-center space-x-2">
                   <Badge variant="secondary">CIV {userLevel}</Badge>
                   <span>{userPoints} points</span>
@@ -88,11 +88,11 @@ export default function MainDashboard() {
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="block w-full md:w-[50%]">
             <CardHeader>
               <CardTitle>Current Challenges</CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="w-full">
               <ul className="space-y-4">
                 {challenges.map((challenge) => (
                   <li key={challenge.id} className="space-y-2">
